@@ -1,0 +1,180 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+html,
+body {
+  height: 100%; /* 確保頁面高度填滿視窗 */
+  margin: 0;
+  display: flex;
+  flex-direction: column; /* 讓子元素垂直排列 */
+}
+
+body {
+  flex: 1; /* 讓 body 填滿剩餘空間 */
+  display: flex;
+  flex-direction: column; /* 讓子元素垂直排列 */
+}
+
+header .navbar {
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5% 20%;
+}
+
+header .nav-item a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+header .nav-item a:hover {
+  background-color: #ddd;
+  color: rgb(211, 2, 2);
+}
+
+header .navIcon {
+  padding: 0px 5px;
+  margin: 0px;
+}
+
+.video-container {
+  flex: 1; /* 讓 video-container 填滿剩餘空間 */
+  position: relative; /* 改為相對定位 */
+  display: flex;
+  justify-content: center; /* 水平置中內容 */
+  align-items: center; /* 垂直置中內容 */
+  background: #111;
+  z-index: 2;
+  padding: 0; /* 移除多餘的內邊距 */
+  min-height: calc(100vh - 50px);
+}
+
+.video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  mix-blend-mode: overlay;
+}
+
+.video-container .text {
+  position: relative;
+  z-index: 10;
+}
+
+.video-container .text h1 {
+  font-size: 5em;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1em;
+  text-transform: uppercase;
+  max-width: 1000px;
+}
+
+.video-container .text p {
+  font-size: 1.1em;
+  color: #fff;
+  margin: 20px 0;
+  font-weight: 400;
+  max-width: 700px;
+}
+
+.video-container .text .btn {
+  display: inline-block;
+  color: #fff;
+  width: 120px;
+  height: 40px;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 8px;
+  font-size: 1em;
+  margin-top: 10px;
+  transition: 0.2s;
+}
+
+.video-container .text .btn:hover {
+  background-color: #ffffff;
+  color: black;
+  letter-spacing: 5px;
+}
+
+.developer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 20px 0px 30px 0px;
+  padding: 20px;
+}
+
+.developer h1 {
+  font-family: "open sans", sans-serif;
+  margin-top: 80px;
+  font-size: 3em;
+  font-weight: 800;
+  color: #000000;
+  line-height: 1em;
+  text-transform: uppercase;
+  max-width: 1300px;
+}
+
+.developer p {
+  font-size: 1.1em;
+  color: #000000;
+  margin: 20px 0;
+  font-weight: 400;
+  max-width: 1300px;
+}
+
+#author-cards {
+  width: 100%; /* 確保容器寬度填滿頁面 */
+  display: flex;
+  justify-content: center; /* 水平置中 */
+  align-items: center; /* 垂直置中 */
+  flex-wrap: wrap; /* 允許卡片換行 */
+  margin: 0 auto; /* 讓容器居中 */
+}
+
+#author-cards .row {
+  margin: 15px 0 50px 0;
+}
+
+#author-cards .card {
+  width: 300px; /* 固定卡片寬度 */
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
+  margin-top: auto;
+  width: 100%;
+  padding: 50px;
+  background-color: #ffffff;
+  text-align: center;
+}
