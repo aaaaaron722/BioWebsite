@@ -66,7 +66,11 @@
             </form>
             <ul class="navbar-nav">
               <li class="navIcon">
-                <a class="text-body-secondary" href="https://www.instagram.com/yux_722/" aria-label="IG">
+                <a
+                  class="text-body-secondary"
+                  href="https://www.instagram.com/yux_722/"
+                  aria-label="IG"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="20"
@@ -98,7 +102,11 @@
                 </a>
               </li>
               <li class="navIcon">
-                <a class="text-body-secondary" href="https://github.com/aaaaaron722/BioWebsite" aria-label="github">
+                <a
+                  class="text-body-secondary"
+                  href="https://github.com/aaaaaron722/BioWebsite"
+                  aria-label="github"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="20"
@@ -193,7 +201,7 @@
               alt="author1"
             />
             <div class="card-body">
-              <h5 class="card-title">1103535-Aaron</h5>
+              <h5>1103535-Aaron</h5>
               <p class="card-text">
                 Mainly in charge of the
                 <span style="font-weight: bold; color: #ff5733"
@@ -205,6 +213,13 @@
                 >
                 as well.
               </p>
+              <div class="Biobutton">
+                <a href="https://github.com/aaaaaron722/">
+                  <button type="button" class="btn btn-outline-primary">
+                    Github
+                  </button>
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -229,81 +244,126 @@
                 >
                 of protein.
               </p>
+              <div class="Biobutton">
+                <a href="https://github.com/aaaaaron722/">
+                  <button type="button" class="btn btn-outline-primary">
+                    Github
+                  </button>
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="container" id="Carousel">
+    <div
+      data-aos="fade-up"
+      data-aos-delay="50"
+      data-aos-duration="1000"
+      data-aos-mirror="true"
+      data-aos-anchor-placement="top-center"
+      class="developer"
+    >
+      <h1>Different feature sets</h1>
+      <p>
+        In protein prediction, different feature sets are used to represent the
+        characteristics of proteins in a numerical format, enabling machine
+        learning models to analyze and predict their properties. Here are some
+        commonly used feature sets:
+      </p>
+    </div>
+
+    <div class="container-sm" id="contentCards">
       <div
-        id="carouselExampleIndicators"
-        class="carousel slide"
-        data-bs-ride="carousel"
+        data-aos="fade-up"
+        data-aos-duration="1500"
+        class="card"
       >
-        <div class="carousel-indicators">
-          <button
-            type="button"
-            data-bs-target="#carouselExampleDark"
-            data-bs-slide-to="0"
-            class="active"
-            aria-current="true"
-            aria-label="Slide 1"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleDark"
-            data-bs-slide-to="1"
-            aria-label="Slide 2"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleDark"
-            data-bs-slide-to="2"
-            aria-label="Slide 3"
-          ></button>
-        </div>
-        <div class="carousel-inner" data-bs-interval="2000">
-          <div class="carousel-item active">
+        <div class="row g-0">
+          <div class="col-md-4">
             <img
-              src="{{ url_for('static', filename='images/3.jpg') }}"
-              class="d-block w-100"
-              alt="..."
+              src="{{ url_for('static', filename='images/4.jpg') }}"
+              class="img-fluid rounded-start"
+              alt="IU image"
             />
           </div>
-          <div class="carousel-item" data-bs-interval="2000">
-            <img
-              src="{{ url_for('static', filename='images/3.jpg') }}"
-              class="d-block w-100"
-              alt="..."
-            />
-          </div>
-          <div class="carousel-item" data-bs-interval="2000">
-            <img
-              src="{{ url_for('static', filename='images/3.jpg') }}"
-              class="d-block w-100"
-              alt="..."
-            />
+          <div class="col">
+            <div class="card-body">
+              <h5 class="card-title">
+                <strong style="color: #ff5733"
+                  >AAC (Amino Acid Composition):</strong
+                >
+              </h5>
+              <p class="card-text">
+                Represents the frequency of each amino acid in a protein
+                sequence. It provides a simple yet effective way to capture the
+                overall composition of the protein.
+              </p>
+              <button type="button" class="btn btn-outline-primary">
+                Learn More
+              </button>
+            </div>
           </div>
         </div>
-        <button
-          class="carousel-control-prev"
-          type="button"
-          data-bs-target="#carouselExampleIndicators"
-          data-bs-slide="prev"
-        >
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button
-          class="carousel-control-next"
-          type="button"
-          data-bs-target="#carouselExampleIndicators"
-          data-bs-slide="next"
-        >
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
+      </div>
+      <div data-aos="fade-up" data-aos-duration="1500" class="card">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img
+              src="{{ url_for('static', filename='images/4.jpg') }}"
+              class="img-fluid rounded-start"
+              alt="IU image"
+            />
+          </div>
+          <div class="col">
+            <div class="card-body">
+              <h5 class="card-title">
+                <strong style="color: #ff5733"
+                  >DPC (Dipeptide Composition):</strong
+                >
+              </h5>
+              <p class="card-text">
+                Captures the frequency of consecutive amino acid pairs in a
+                protein sequence. This feature set provides information about
+                the local sequence order and interactions between amino acids.
+              </p>
+              <button type="button" class="btn btn-outline-primary">
+                Learn More
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-aos="fade-up" data-aos-duration="1500" class="card">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img
+              src="{{ url_for('static', filename='images/4.jpg') }}"
+              class="img-fluid rounded-start"
+              alt="IU image"
+            />
+          </div>
+          <div class="col">
+            <div class="card-body">
+              <h5 class="card-title">
+                <strong style="color: #ff5733"
+                  >PSSM (Position-Specific Scoring Matrix):</strong
+                >
+              </h5>
+              <p class="card-text">
+                Derived from sequence alignment, PSSM represents the
+                evolutionary information of a protein by showing the likelihood
+                of each amino acid appearing at specific positions in the
+                sequence. It is widely used for capturing structural and
+                functional properties of proteins.
+              </p>
+              <button type="button" class="btn btn-outline-primary">
+                Learn More
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -325,7 +385,11 @@
       </div>
       <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
         <li class="ms-3">
-          <a class="text-body-secondary" href="https://www.instagram.com/yux_722/" aria-label="Instagram">
+          <a
+            class="text-body-secondary"
+            href="https://www.instagram.com/yux_722/"
+            aria-label="Instagram"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="25"
@@ -357,7 +421,11 @@
           </a>
         </li>
         <li class="ms-3">
-          <a class="text-body-secondary" href="https://github.com/aaaaaron722/BioWebsite" aria-label="github">
+          <a
+            class="text-body-secondary"
+            href="https://github.com/aaaaaron722/BioWebsite"
+            aria-label="github"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="25"
