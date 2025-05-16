@@ -1,2 +1,18 @@
-venv
-__pycache__
+# Python bytecode
+*.pyc
+*.pyo
+*.pyd
+
+# VSCode 設定
+.vscode/
+
+# macOS 廢物
+.DS_Store
+
+# 虛擬環境（有些人叫 .env、.venv）
+venv/
+.env/
+.venv/
+
+# 快取資料夾
+__pycache__/
