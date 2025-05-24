@@ -41,31 +41,39 @@ def pssm_page():
 
 @app.route('/aac_predict', methods=['POST'])
 def aac_predict():
-    data = request.get_json()
-    sequence = data.get('sequence', '')
-    if not sequence:
-        return jsonify({'error': 'No sequence provided'}), 400
+    try:
+        data = request.get_json()
+        sequence = data.get('sequence', '')
+        if not sequence:
+            return jsonify({'error': 'No sequence provided'}), 400
 
-    # 轉換成 AAC 特徵
-    aac_vec = aac_feature(sequence)
-    # CNN 可能需要 reshape
-    aac_vec = aac_vec.reshape(1, 20, 1)  # 根據你的模型 input shape 調整
+        # 轉換成 AAC 特徵
+        aac_vec = aac_feature(sequence)
+        # CNN 可能需要 reshape
+        aac_vec = aac_vec.reshape(1, 20, 1)  # 根據你的模型 input shape 調整
 
-    # 預測
-    pred = aac_model.predict(aac_vec)
-    result = int(np.argmax(pred, axis=1)[0])
-    probability = float(pred[0][result])  # 預測類別的機率
+        # 預測
+        pred = aac_model.predict(aac_vec)
+        result = int(np.argmax(pred, axis=1)[0])
+        probability = float(pred[0][result])  # 預測類別的機率
 
-    # 如果你想同時回傳兩個類別的機率
-    probability_0 = float(pred[0][0])
-    probability_1 = float(pred[0][1])
+        # 如果你想同時回傳兩個類別的機率
+        probability_0 = float(pred[0][0])
+        probability_1 = float(pred[0][1])
 
-    return jsonify({
-        'prediction': result,
-        'probability': probability,
-        'probability_0': probability_0,
-        'probability_1': probability_1
-    })
+        return jsonify({
+            'prediction': result,
+            'probability': probability,
+            'probability_0': probability_0,
+            'probability_1': probability_1
+        })
+    except Exception as e:
+        # 記錄錯誤訊息到 log
+        import traceback
+        logger.error(f"AAC predict error: {e}")
+        logger.error(traceback.format_exc())
+        # 回傳錯誤訊息給前端
+        return jsonify({'error': f'Internal server error: {str(e)}'}), 500
 
 @app.route('/dpc_predict', methods=['POST'])
 def dpc_predict():
