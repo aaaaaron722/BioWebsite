@@ -18,7 +18,7 @@
   </head>
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
             <img
@@ -47,10 +47,13 @@
                 <a class="nav-link" aria-current="page" href="#">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Page 2</a>
+                <a class="nav-link" href="{{url_for('aac_page')}}">AAC</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Page 3</a>
+                <a class="nav-link" href="{{url_for('dpc_page')}}">DPC</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{url_for('pssm_page')}}">PSSM</a>
               </li>
             </ul>
             <form class="d-flex" role="search" style="margin-right: 20px">
@@ -193,12 +196,13 @@
             data-aos="fade-right"
             data-aos-delay="50"
             data-aos-duration="1000"
+            data-aos-mirror="true"
             class="card"
           >
             <img
-              src="{{ url_for('static', filename='images/2.jpg') }}"
+              src="{{ url_for('static', filename='images/2.jpeg') }}"
               class="card-img-top"
-              alt="author1"
+              alt="Aaron"
             />
             <div class="card-body">
               <h5>1103535-Aaron</h5>
@@ -228,12 +232,13 @@
             data-aos="fade-left"
             data-aos-delay="50"
             data-aos-duration="1000"
+            data-aos-mirror="true"
             class="card"
           >
             <img
-              src="{{ url_for('static', filename='images/2.jpg') }}"
+              src="{{ url_for('static', filename='images/Sabi.jpg') }}"
               class="card-img-top"
-              alt="author2"
+              alt="Bryant"
             />
             <div class="card-body">
               <h5 class="card-title">1103522-Bryant</h5>
@@ -275,11 +280,7 @@
     </div>
 
     <div class="container-sm" id="contentCards">
-      <div
-        data-aos="fade-up"
-        data-aos-duration="1500"
-        class="card"
-      >
+      <div data-aos="fade-up" data-aos-duration="1500" class="card">
         <div class="row g-0">
           <div class="col-md-4">
             <img
@@ -291,18 +292,20 @@
           <div class="col">
             <div class="card-body">
               <h5 class="card-title">
-                <strong style="color: #ff5733"
+                <strong style="color: #ff5733; font-size: 1.2em;"
                   >AAC (Amino Acid Composition):</strong
                 >
               </h5>
-              <p class="card-text">
+              <p class="card-text" style="font-size: 1.1em;">
                 Represents the frequency of each amino acid in a protein
                 sequence. It provides a simple yet effective way to capture the
                 overall composition of the protein.
               </p>
-              <button type="button" class="btn btn-outline-primary">
-                Learn More
-              </button>
+              <a href="{{url_for('aac_page')}}">
+                <button type="button" class="btn btn-outline-primary">
+                  Learn More
+                </button>
+              </a>
             </div>
           </div>
         </div>
@@ -319,18 +322,20 @@
           <div class="col">
             <div class="card-body">
               <h5 class="card-title">
-                <strong style="color: #ff5733"
+                <strong style="color: #ff5733; font-size: 1.2em;"
                   >DPC (Dipeptide Composition):</strong
                 >
               </h5>
-              <p class="card-text">
+              <p class="card-text" style="font-size: 1.1em;">
                 Captures the frequency of consecutive amino acid pairs in a
                 protein sequence. This feature set provides information about
                 the local sequence order and interactions between amino acids.
               </p>
-              <button type="button" class="btn btn-outline-primary">
-                Learn More
-              </button>
+              <a href="{{url_for('dpc_page')}}">
+                <button type="button" class="btn btn-outline-primary">
+                  Learn More
+                </button>
+              </a>
             </div>
           </div>
         </div>
@@ -347,24 +352,43 @@
           <div class="col">
             <div class="card-body">
               <h5 class="card-title">
-                <strong style="color: #ff5733"
+                <strong style="color: #ff5733; font-size: 1.2em;"
                   >PSSM (Position-Specific Scoring Matrix):</strong
                 >
               </h5>
-              <p class="card-text">
+              <p class="card-text" style="font-size: 1.1em;">
                 Derived from sequence alignment, PSSM represents the
                 evolutionary information of a protein by showing the likelihood
                 of each amino acid appearing at specific positions in the
                 sequence. It is widely used for capturing structural and
                 functional properties of proteins.
               </p>
-              <button type="button" class="btn btn-outline-primary">
-                Learn More
-              </button>
+              <a href="{{url_for('pssm_page')}}">
+                <button type="button" class="btn btn-outline-primary">
+                  Learn More
+                </button>
+              </a>
             </div>
           </div>
         </div>
       </div>
+    </div>
+
+    <div class="container" id="RocCurve">
+      <h1>Our model performance</h1>
+      <img src="{{ url_for('static', filename='images/output.png') }}" alt="RocCurve">
+      <p>
+        The ROC curve (Receiver Operating Characteristic curve) is a graphical
+        representation of the performance of a binary classification model at
+        various threshold settings. It illustrates the trade-off between the
+        true positive rate (sensitivity) and the false positive rate (1 - specificity).
+        The area under the ROC curve (AUC) is a single scalar value that
+        summarizes the model's performance across all thresholds. An AUC of 1
+        indicates a perfect model, while an AUC of 0.5 suggests a model with no
+        discrimination ability. In our case, the AUC of 0.86 indicates that our
+        model has a high level of accuracy in distinguishing between positive
+        and negative classes.
+      </p>
     </div>
 
     <footer

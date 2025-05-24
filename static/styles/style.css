@@ -4,7 +4,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Poppins", sans-serif;
+  font-family: "Poetsen One", sans-serif;
 }
 
 html,
@@ -25,6 +25,7 @@ header .navbar {
   justify-content: space-between;
   align-items: center;
   padding: 0.5% 20%;
+  background-color: #ffffff;
 }
 
 header .nav-item a {
@@ -211,6 +212,20 @@ header .navIcon {
   height: 300px;
   border-radius: 8px;
   object-fit: cover;
+}
+
+#RocCurve {
+  text-align: center;
+  justify-content: center;
+  max-width: 1000px;
+}
+
+#RocCurve p{
+  font-family: "Share Tech", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.5em;
+  font-size: 1.4em;
 }
 
 footer {

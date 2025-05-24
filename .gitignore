@@ -16,3 +16,7 @@ venv/
 
 # 快取資料夾
 __pycache__/
+
+data
+
+Final.ipynb
