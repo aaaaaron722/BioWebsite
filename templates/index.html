@@ -155,15 +155,14 @@
         playsinline
       ></video>
       <div class="text">
-        <h1>FAD Binding Site Prediction</h1>
+        <h1>Identifying SNARE Proteins Using CNN</h1>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet,
-          consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          SNARE proteins play a vital role in membrane fusion and cellular
+          physiology and pathological processes. Many potential therapeutics for
+          mental diseases or even cancer based on SNAREs are also developed.
+          Therefore, there is a dire need to predict the SNAREs for further
+          manipulation of these essential proteins, which demands new and
+          efficient approaches.
         </p>
         <button type="button" class="btn btn-outline-light">Start!</button>
       </div>
@@ -292,11 +291,11 @@
           <div class="col">
             <div class="card-body">
               <h5 class="card-title">
-                <strong style="color: #ff5733; font-size: 1.2em;"
+                <strong style="color: #ff5733; font-size: 1.2em"
                   >AAC (Amino Acid Composition):</strong
                 >
               </h5>
-              <p class="card-text" style="font-size: 1.1em;">
+              <p class="card-text" style="font-size: 1.1em">
                 Represents the frequency of each amino acid in a protein
                 sequence. It provides a simple yet effective way to capture the
                 overall composition of the protein.
@@ -322,11 +321,11 @@
           <div class="col">
             <div class="card-body">
               <h5 class="card-title">
-                <strong style="color: #ff5733; font-size: 1.2em;"
+                <strong style="color: #ff5733; font-size: 1.2em"
                   >DPC (Dipeptide Composition):</strong
                 >
               </h5>
-              <p class="card-text" style="font-size: 1.1em;">
+              <p class="card-text" style="font-size: 1.1em">
                 Captures the frequency of consecutive amino acid pairs in a
                 protein sequence. This feature set provides information about
                 the local sequence order and interactions between amino acids.
@@ -352,11 +351,11 @@
           <div class="col">
             <div class="card-body">
               <h5 class="card-title">
-                <strong style="color: #ff5733; font-size: 1.2em;"
+                <strong style="color: #ff5733; font-size: 1.2em"
                   >PSSM (Position-Specific Scoring Matrix):</strong
                 >
               </h5>
-              <p class="card-text" style="font-size: 1.1em;">
+              <p class="card-text" style="font-size: 1.1em">
                 Derived from sequence alignment, PSSM represents the
                 evolutionary information of a protein by showing the likelihood
                 of each amino acid appearing at specific positions in the
@@ -376,18 +375,21 @@
 
     <div class="container" id="RocCurve">
       <h1>Our model performance</h1>
-      <img src="{{ url_for('static', filename='images/output.png') }}" alt="RocCurve">
+      <img
+        src="{{ url_for('static', filename='images/output.png') }}"
+        alt="RocCurve"
+      />
       <p>
         The ROC curve (Receiver Operating Characteristic curve) is a graphical
         representation of the performance of a binary classification model at
         various threshold settings. It illustrates the trade-off between the
-        true positive rate (sensitivity) and the false positive rate (1 - specificity).
-        The area under the ROC curve (AUC) is a single scalar value that
-        summarizes the model's performance across all thresholds. An AUC of 1
-        indicates a perfect model, while an AUC of 0.5 suggests a model with no
-        discrimination ability. In our case, the AUC of 0.86 indicates that our
-        model has a high level of accuracy in distinguishing between positive
-        and negative classes.
+        true positive rate (sensitivity) and the false positive rate (1 -
+        specificity). The area under the ROC curve (AUC) is a single scalar
+        value that summarizes the model's performance across all thresholds. An
+        AUC of 1 indicates a perfect model, while an AUC of 0.5 suggests a model
+        with no discrimination ability. In our case, the AUC of 0.86 indicates
+        that our model has a high level of accuracy in distinguishing between
+        positive and negative classes.
       </p>
     </div>
 
